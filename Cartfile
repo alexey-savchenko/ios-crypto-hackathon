@@ -1,0 +1,3 @@
+github "eshurakov/SwiftHTTPClient" "master"
+github "eshurakov/SwiftLog" "master"
+github "daltoniam/Starscream"
