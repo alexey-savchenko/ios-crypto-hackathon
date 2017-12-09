@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import BUXCryptoClient
 
 class AccountCoordinator: Coordinator, AccountFlowDelegate {
   
@@ -42,6 +42,14 @@ class AccountCoordinator: Coordinator, AccountFlowDelegate {
   
   func dissmisAcountFlow() {
     coordinatorDelegate?.dissmisAccountFlow(self)
+  }
+  
+  func showTransactions(_ transactions: [Transaction]) {
+    
+  }
+  
+  func showOrders(_ orders: [Order]) {
+    
   }
   
 }

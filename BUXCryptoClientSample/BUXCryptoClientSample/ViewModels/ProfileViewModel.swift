@@ -11,6 +11,12 @@ import BUXCryptoClient
 
 class ProfileViewModel: ProfileViewModelType {
   
+  var profileData: Account? {
+    return _profileData
+  }
+
+  private var _profileData: Account?
+  
   private lazy var client: BUXCryptoClient = BUXCryptoClientBuilder(environment: .development).build(withAccessToken: Store.token)
   
   weak var updateDelegate: ProfileUpdateDelegate?
@@ -23,6 +29,7 @@ class ProfileViewModel: ProfileViewModelType {
       switch result {
       case .success(let account):
         
+        self._profileData = account
         self.updateDelegate?.didReceiveProfileData(account)
         
       case .failure(let error):

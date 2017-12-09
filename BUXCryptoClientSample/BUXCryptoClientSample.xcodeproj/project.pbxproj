@@ -31,6 +31,12 @@
 		80329EBC1FDC450A001B8BA8 /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EBB1FDC450A001B8BA8 /* AccountCoordinator.swift */; };
 		80329EBE1FDC4750001B8BA8 /* AccountFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EBD1FDC4750001B8BA8 /* AccountFlowDelegate.swift */; };
 		80329EC01FDC4852001B8BA8 /* AccountCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EBF1FDC4852001B8BA8 /* AccountCoordinatorDelegate.swift */; };
+		80329EC21FDC4C24001B8BA8 /* TransactionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EC11FDC4C24001B8BA8 /* TransactionsVC.swift */; };
+		80329EC51FDC4CBD001B8BA8 /* TransactionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EC31FDC4CBD001B8BA8 /* TransactionListCell.swift */; };
+		80329EC61FDC4CBD001B8BA8 /* TransactionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80329EC41FDC4CBD001B8BA8 /* TransactionListCell.xib */; };
+		80329EC81FDC4E8C001B8BA8 /* TransactionsViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EC71FDC4E8C001B8BA8 /* TransactionsViewModelType.swift */; };
+		80329ECA1FDC4F55001B8BA8 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EC91FDC4F55001B8BA8 /* TransactionsViewModel.swift */; };
+		80329ECC1FDC583B001B8BA8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329ECB1FDC583B001B8BA8 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +91,12 @@
 		80329EBB1FDC450A001B8BA8 /* AccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
 		80329EBD1FDC4750001B8BA8 /* AccountFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFlowDelegate.swift; sourceTree = "<group>"; };
 		80329EBF1FDC4852001B8BA8 /* AccountCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		80329EC11FDC4C24001B8BA8 /* TransactionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsVC.swift; sourceTree = "<group>"; };
+		80329EC31FDC4CBD001B8BA8 /* TransactionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListCell.swift; sourceTree = "<group>"; };
+		80329EC41FDC4CBD001B8BA8 /* TransactionListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionListCell.xib; sourceTree = "<group>"; };
+		80329EC71FDC4E8C001B8BA8 /* TransactionsViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModelType.swift; sourceTree = "<group>"; };
+		80329EC91FDC4F55001B8BA8 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		80329ECB1FDC583B001B8BA8 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +169,7 @@
 			children = (
 				80329E931FDC072D001B8BA8 /* MarketListVC.swift */,
 				80329EAA1FDC2956001B8BA8 /* AccountVC.swift */,
+				80329EC11FDC4C24001B8BA8 /* TransactionsVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -167,6 +180,7 @@
 				80329E991FDC0B1B001B8BA8 /* MarketListViewModel.swift */,
 				80329EA81FDC2483001B8BA8 /* MarketListCellViewModel.swift */,
 				80329EB01FDC2E21001B8BA8 /* ProfileViewModel.swift */,
+				80329EC91FDC4F55001B8BA8 /* TransactionsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -182,6 +196,7 @@
 				80329EB91FDC3DA2001B8BA8 /* ProfileUpdateDelegate.swift */,
 				80329EBD1FDC4750001B8BA8 /* AccountFlowDelegate.swift */,
 				80329EBF1FDC4852001B8BA8 /* AccountCoordinatorDelegate.swift */,
+				80329EC71FDC4E8C001B8BA8 /* TransactionsViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -200,6 +215,8 @@
 			children = (
 				80329E9F1FDC0EC1001B8BA8 /* MarketListCell.swift */,
 				80329EA01FDC0EC1001B8BA8 /* MarketListCell.xib */,
+				80329EC31FDC4CBD001B8BA8 /* TransactionListCell.swift */,
+				80329EC41FDC4CBD001B8BA8 /* TransactionListCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -208,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				80329EB41FDC3A5A001B8BA8 /* Store.swift */,
+				80329ECB1FDC583B001B8BA8 /* Utils.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -295,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80329EC61FDC4CBD001B8BA8 /* TransactionListCell.xib in Resources */,
 				3C13BB781FB5D10F0033E52F /* LaunchScreen.storyboard in Resources */,
 				3C13BB751FB5D10F0033E52F /* Assets.xcassets in Resources */,
 				3C13BB731FB5D10F0033E52F /* Main.storyboard in Resources */,
@@ -319,16 +338,21 @@
 				80329EA11FDC0EC1001B8BA8 /* MarketListCell.swift in Sources */,
 				80329E9A1FDC0B1B001B8BA8 /* MarketListViewModel.swift in Sources */,
 				80329E961FDC0908001B8BA8 /* MarketListViewModelType.swift in Sources */,
+				80329EC21FDC4C24001B8BA8 /* TransactionsVC.swift in Sources */,
+				80329EC51FDC4CBD001B8BA8 /* TransactionListCell.swift in Sources */,
 				80329EB51FDC3A5A001B8BA8 /* Store.swift in Sources */,
 				80329EC01FDC4852001B8BA8 /* AccountCoordinatorDelegate.swift in Sources */,
 				80329E941FDC072D001B8BA8 /* MarketListVC.swift in Sources */,
 				80329EA71FDC2169001B8BA8 /* CryptoMarketListDelegate.swift in Sources */,
 				80329EBE1FDC4750001B8BA8 /* AccountFlowDelegate.swift in Sources */,
+				80329ECA1FDC4F55001B8BA8 /* TransactionsViewModel.swift in Sources */,
 				80329EBC1FDC450A001B8BA8 /* AccountCoordinator.swift in Sources */,
 				80329EA91FDC2483001B8BA8 /* MarketListCellViewModel.swift in Sources */,
 				80329EB11FDC2E21001B8BA8 /* ProfileViewModel.swift in Sources */,
 				80329EAB1FDC2956001B8BA8 /* AccountVC.swift in Sources */,
 				80329E8F1FDC058B001B8BA8 /* Coordinator.swift in Sources */,
+				80329EC81FDC4E8C001B8BA8 /* TransactionsViewModelType.swift in Sources */,
+				80329ECC1FDC583B001B8BA8 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

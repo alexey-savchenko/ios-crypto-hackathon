@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import BUXCryptoClient
 
 protocol ProfileViewModelType: DataFetcher {
   
-  
+  var profileData: Account? { get }
   
 }

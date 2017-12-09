@@ -42,12 +42,9 @@ class AccountVC: UIViewController {
   
   @IBAction func pastTransactionsButtonTap(_ sender: UIButton) {
     
-    
   }
   
   @IBAction func ordersButtonTap(_ sender: UIButton) {
-    
-    
     
   }
   

@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import BUXCryptoClient
 
 protocol AccountFlowDelegate: class {
   
   func dissmisAcountFlow()
+  func showTransactions(_ transactions: [Transaction])
+  func showOrders(_ orders: [Order])
   
 }
