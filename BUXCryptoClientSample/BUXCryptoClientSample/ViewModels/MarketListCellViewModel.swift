@@ -13,8 +13,8 @@ struct MarketListCellViewModel {
   
   let name: String
   
-  let bestAsk: Decimal
-  let bestBid: Decimal
+  var bestAsk: Decimal
+  var bestBid: Decimal
   
   var currentAsk: Decimal = 0.00000000
   var currentBid: Decimal = 0.00000000
@@ -30,6 +30,14 @@ struct MarketListCellViewModel {
   mutating func updateWith(update: CryptoMarketQuoteUpdate) {
     self.currentAsk = update.ask
     self.currentBid = update.bid
+    
+    if self.currentAsk < bestAsk {
+      bestAsk = currentAsk
+    }
+    
+    if currentBid > bestBid {
+      currentBid = bestBid
+    }
   }
   
 }

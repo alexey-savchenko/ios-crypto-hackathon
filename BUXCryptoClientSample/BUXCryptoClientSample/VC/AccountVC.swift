@@ -32,7 +32,10 @@ class AccountVC: UIViewController {
     
     viewModel.start()
     
-    let dissmisItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dissmissBittonTap))
+    let dissmisItem = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                      target: self,
+                                      action: #selector(dissmissBittonTap))
+    
     navigationItem.leftBarButtonItems = [dissmisItem]
   }
   
@@ -52,9 +55,6 @@ class AccountVC: UIViewController {
     
   }
   
-  
-  
-  
   deinit {
     print("\(self) dealloc")
   }
@@ -64,8 +64,6 @@ class AccountVC: UIViewController {
 extension AccountVC: ProfileUpdateDelegate {
   
   func didReceiveProfileData(_ data: Account) {
-    
-    print(data)
     
     baseCurrencyNameLabel.text = data.baseBalance.quantity.currency
     baseCurrencyValueLabel.text = "\(data.baseBalance.quantity.amount)"

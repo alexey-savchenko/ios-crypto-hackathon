@@ -49,87 +49,7 @@ class MarketListVC: UIViewController, CryptomarketList {
                                       action: #selector(profileItemTap(_:)))
     
     navigationItem.rightBarButtonItems = [profileItem]
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //    self.client.connectToRealtimeFeed()
-    //
-    //    self.client.cryptoMarketController.fetchCryptoMarkets { [weak self] (result) in
-    //      guard let `self` = self else { return }
-    //
-    //      switch result {
-    //      case .success(let list):
-    //        print(String(describing: list))
-    //        self.client.cryptoMarketController.setObserver(self, forCryptos: list)
-    //      case .failure(let error):
-    //        print(error.localizedDescription)
-    //      }
-    //    }
-    
-//            self.client.cryptoMarketController.fetchUserAccount { [weak self] (result) in
-//                switch result {
-//                case .success(let account):
-//                    print(account)
-//                case .failure(let error):
-//                    print(error.localizedDescription)
-//                }
-//            }
-    
-    //        let tradeSize = BigMoney(currency: "BTC", decimals: 8, amount: 0.0012)
-    //        let tradeOrder = TradeOrder(tradeSize: tradeSize,
-    //                                    limitPrice: 0.00238351)
-    //
-    //        self.client.cryptoMarketController.send(buyOrder: tradeOrder, forCrypto: "NEO") { (result) in
-    //            switch result {
-    //            case .success(let order):
-    //                print(String(describing: order))
-    //            case .failure(let error):
-    //                print(error.localizedDescription)
-    //            }
-    //        }
-    
-    
-    //        let tradeSize = BigMoney(currency: "NEO", decimals: 8, amount: 0.5)
-    //        let tradeOrder = TradeOrder(tradeSize: tradeSize,
-    //                                    limitPrice: 0.00233011)
-    //
-    //        self.client.cryptoMarketController.send(sellOrder: tradeOrder, forCrypto: "NEO") { (result) in
-    //            switch result {
-    //            case .success(let order):
-    //                print(String(describing: order))
-    //            case .failure(let error):
-    //                print(error.localizedDescription)
-    //            }
-    //        }
-    
-    //        self.client.cryptoMarketController.cancel(order: "----", forCrypto: "NEO") { (result) in
-    //            switch result {
-    //            case .success(let order):
-    //                print(String(describing: order))
-    //            case .failure(let error):
-    //                print(error.localizedDescription)
-    //            }
-    //        }
+
   }
   
   private func listSetUp() {
@@ -137,7 +57,8 @@ class MarketListVC: UIViewController, CryptomarketList {
     marketListTableView.delegate = self
     marketListTableView.dataSource = self
     
-    marketListTableView.register(UINib.init(nibName: "MarketListCell", bundle: nil), forCellReuseIdentifier: "MarketListCell")
+    marketListTableView.register(UINib(nibName: "MarketListCell", bundle: nil),
+                                 forCellReuseIdentifier: "MarketListCell")
     
     view.addSubview(marketListTableView)
     marketListTableView.translatesAutoresizingMaskIntoConstraints = false
@@ -196,4 +117,86 @@ extension MarketListVC: UITableViewDataSource, UITableViewDelegate {
   
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    self.client.connectToRealtimeFeed()
+//
+//    self.client.cryptoMarketController.fetchCryptoMarkets { [weak self] (result) in
+//      guard let `self` = self else { return }
+//
+//      switch result {
+//      case .success(let list):
+//        print(String(describing: list))
+//        self.client.cryptoMarketController.setObserver(self, forCryptos: list)
+//      case .failure(let error):
+//        print(error.localizedDescription)
+//      }
+//    }
+
+//            self.client.cryptoMarketController.fetchUserAccount { [weak self] (result) in
+//                switch result {
+//                case .success(let account):
+//                    print(account)
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                }
+//            }
+
+//        let tradeSize = BigMoney(currency: "BTC", decimals: 8, amount: 0.0012)
+//        let tradeOrder = TradeOrder(tradeSize: tradeSize,
+//                                    limitPrice: 0.00238351)
+//
+//        self.client.cryptoMarketController.send(buyOrder: tradeOrder, forCrypto: "NEO") { (result) in
+//            switch result {
+//            case .success(let order):
+//                print(String(describing: order))
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+
+
+//        let tradeSize = BigMoney(currency: "NEO", decimals: 8, amount: 0.5)
+//        let tradeOrder = TradeOrder(tradeSize: tradeSize,
+//                                    limitPrice: 0.00233011)
+//
+//        self.client.cryptoMarketController.send(sellOrder: tradeOrder, forCrypto: "NEO") { (result) in
+//            switch result {
+//            case .success(let order):
+//                print(String(describing: order))
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+
+//        self.client.cryptoMarketController.cancel(order: "----", forCrypto: "NEO") { (result) in
+//            switch result {
+//            case .success(let order):
+//                print(String(describing: order))
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
 
