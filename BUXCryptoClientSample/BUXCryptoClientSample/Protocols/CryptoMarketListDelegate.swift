@@ -11,7 +11,7 @@ import BUXCryptoClient
 
 protocol CryptomarketListDelegate: class {
   
-  func goToProfile()
+  func goToAccount()
   
   func didSelectMarketInList(_ market: CryptoMarket)
   

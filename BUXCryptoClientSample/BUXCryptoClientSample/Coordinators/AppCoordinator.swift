@@ -54,7 +54,7 @@ class AppCoordinator: Coordinator {
 
 extension AppCoordinator: CryptomarketListDelegate {
   
-  func goToProfile() {
+  func goToAccount() {
     
     let accountCoordinator = AccountCoordinator()
     

@@ -20,4 +20,8 @@ protocol MarketListViewModelType: DataFetcher {
   
   var managedList: CryptomarketList? { get set }
   
+  func startObservation()
+  
+  func endObservation()
+  
 }

@@ -57,4 +57,8 @@ class AccountCoordinator: Coordinator, AccountFlowDelegate {
     
   }
   
+  deinit {
+    print("\(self) dealloc")
+  }
+  
 }

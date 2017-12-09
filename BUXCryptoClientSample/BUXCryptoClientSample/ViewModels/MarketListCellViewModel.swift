@@ -31,7 +31,7 @@ struct MarketListCellViewModel {
     self.currentAsk = update.ask
     self.currentBid = update.bid
     
-    if self.currentAsk < bestAsk {
+    if currentAsk < bestAsk {
       bestAsk = currentAsk
     }
     

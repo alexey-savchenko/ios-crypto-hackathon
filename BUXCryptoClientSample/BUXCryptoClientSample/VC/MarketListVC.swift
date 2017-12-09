@@ -27,9 +27,6 @@ class MarketListVC: UIViewController, CryptomarketList {
     super.init(coder: aDecoder)
   }
   
-  @objc func profileItemTap(_ sender: UIBarButtonItem){
-    delegate?.goToProfile()
-  }
   
   override func viewDidLoad() {
     
@@ -40,9 +37,7 @@ class MarketListVC: UIViewController, CryptomarketList {
     view.backgroundColor = .white
     
     listSetUp()
-    
-    viewModel.start()
-    
+  
     let profileItem = UIBarButtonItem(title: "Profile",
                                       style: .plain,
                                       target: self,
@@ -50,6 +45,22 @@ class MarketListVC: UIViewController, CryptomarketList {
     
     navigationItem.rightBarButtonItems = [profileItem]
 
+  }
+  
+  @objc func profileItemTap(_ sender: UIBarButtonItem){
+    delegate?.goToAccount()
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    viewModel.start()
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    
+    viewModel.endObservation()
   }
   
   private func listSetUp() {

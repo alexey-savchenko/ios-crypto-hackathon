@@ -135,7 +135,7 @@
 				3C13BB711FB5D10F0033E52F /* Main.storyboard */,
 				3C13BB761FB5D10F0033E52F /* LaunchScreen.storyboard */,
 				3C13BB791FB5D10F0033E52F /* Info.plist */,
-				80329E921FDC068C001B8BA8 /* Coordinator */,
+				80329E921FDC068C001B8BA8 /* Coordinators */,
 				80329E971FDC0925001B8BA8 /* VC */,
 				80329E981FDC092B001B8BA8 /* ViewModels */,
 				80329EAC1FDC2970001B8BA8 /* Views */,
@@ -154,14 +154,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		80329E921FDC068C001B8BA8 /* Coordinator */ = {
+		80329E921FDC068C001B8BA8 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
 				80329E8E1FDC058B001B8BA8 /* Coordinator.swift */,
 				80329E901FDC05DE001B8BA8 /* AppCoordinator.swift */,
 				80329EBB1FDC450A001B8BA8 /* AccountCoordinator.swift */,
 			);
-			path = Coordinator;
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		80329E971FDC0925001B8BA8 /* VC */ = {

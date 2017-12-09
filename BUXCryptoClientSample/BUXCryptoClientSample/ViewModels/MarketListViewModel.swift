@@ -11,6 +11,19 @@ import BUXCryptoClient
 
 class MarketListViewModel: MarketListViewModelType {
   
+  func startObservation() {
+    guard !cryptoMarkets.isEmpty else { return }
+    
+    self.client.cryptoMarketController.setObserver(self, forCryptos: cryptoMarkets)
+    
+  }
+  
+  func endObservation() {
+    self.client.cryptoMarketController.removeObserver()
+    
+  }
+  
+  
   private lazy var client: BUXCryptoClient = BUXCryptoClientBuilder(environment: .development).build(withAccessToken: Store.token)
   
   private var cryptoMarkets = [CryptoMarket]() {
@@ -36,7 +49,9 @@ class MarketListViewModel: MarketListViewModelType {
       case let .success(list):
         
         self.cryptoMarkets = list
-        self.client.cryptoMarketController.setObserver(self, forCryptos: list)
+
+        self.startObservation()
+        
         self.managedList?.marketListTableView.reloadData()
         
       case let .failure(error):
@@ -54,7 +69,7 @@ class MarketListViewModel: MarketListViewModelType {
     cell.nameLabel.text = cellViewModels[indexPath.row].name
     
     cell.bidLabel.text = "Bid \(cellViewModels[indexPath.row].currentBid)"
-    cell.askLabel.text = "Bid \(cellViewModels[indexPath.row].currentAsk)"
+    cell.askLabel.text = "Ask \(cellViewModels[indexPath.row].currentAsk)"
     
     cell.bestBidLabel.text = "Best bid \(cellViewModels[indexPath.row].bestBid)"
     cell.bestAskLabel.text = "Best ask \(cellViewModels[indexPath.row].bestAsk)"
