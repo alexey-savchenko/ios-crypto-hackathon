@@ -19,6 +19,8 @@
 		80329EA11FDC0EC1001B8BA8 /* MarketListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329E9F1FDC0EC1001B8BA8 /* MarketListCell.swift */; };
 		80329EA21FDC0EC1001B8BA8 /* MarketListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80329EA01FDC0EC1001B8BA8 /* MarketListCell.xib */; };
 		80329EA41FDC1283001B8BA8 /* CryptoMarketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */; };
+		80329EA71FDC2169001B8BA8 /* CryptoMarketListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EA61FDC2169001B8BA8 /* CryptoMarketListDelegate.swift */; };
+		80329EA91FDC2483001B8BA8 /* MarketListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EA81FDC2483001B8BA8 /* MarketListCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		80329E9F1FDC0EC1001B8BA8 /* MarketListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketListCell.swift; sourceTree = "<group>"; };
 		80329EA01FDC0EC1001B8BA8 /* MarketListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketListCell.xib; sourceTree = "<group>"; };
 		80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketList.swift; sourceTree = "<group>"; };
+		80329EA61FDC2169001B8BA8 /* CryptoMarketListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketListDelegate.swift; sourceTree = "<group>"; };
+		80329EA81FDC2483001B8BA8 /* MarketListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketListCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +108,7 @@
 				80329E981FDC092B001B8BA8 /* ViewModels */,
 				80329E9F1FDC0EC1001B8BA8 /* MarketListCell.swift */,
 				80329EA01FDC0EC1001B8BA8 /* MarketListCell.xib */,
-				80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */,
+				80329EA51FDC212F001B8BA8 /* Protocols */,
 			);
 			path = BUXCryptoClientSample;
 			sourceTree = "<group>";
@@ -140,8 +144,18 @@
 			children = (
 				80329E951FDC0908001B8BA8 /* MarketListViewModelType.swift */,
 				80329E991FDC0B1B001B8BA8 /* MarketListViewModel.swift */,
+				80329EA81FDC2483001B8BA8 /* MarketListCellViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		80329EA51FDC212F001B8BA8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */,
+				80329EA61FDC2169001B8BA8 /* CryptoMarketListDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +262,8 @@
 				80329E9A1FDC0B1B001B8BA8 /* MarketListViewModel.swift in Sources */,
 				80329E961FDC0908001B8BA8 /* MarketListViewModelType.swift in Sources */,
 				80329E941FDC072D001B8BA8 /* MarketListVC.swift in Sources */,
+				80329EA71FDC2169001B8BA8 /* CryptoMarketListDelegate.swift in Sources */,
+				80329EA91FDC2483001B8BA8 /* MarketListCellViewModel.swift in Sources */,
 				80329E8F1FDC058B001B8BA8 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

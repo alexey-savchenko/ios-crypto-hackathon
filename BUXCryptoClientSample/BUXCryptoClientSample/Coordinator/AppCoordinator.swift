@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import BUXCryptoClient
 
 class AppCoordinator: Coordinator {
   
@@ -41,12 +42,22 @@ class AppCoordinator: Coordinator {
     let vm = MarketListViewModel()
     let vc = MarketListVC(viewModel: vm)
     vm.managedList = vc
+    vc.delegate = self
     
     navigationController.viewControllers = [vc]
     
   }
+
+}
+
+extension AppCoordinator: CryptomarketListDelegate {
   
+  func goToProfile() {
+    
+  }
   
-  
+  func didSelectMarketInList(_ market: CryptoMarket) {
+      print(market)
+  }
   
 }

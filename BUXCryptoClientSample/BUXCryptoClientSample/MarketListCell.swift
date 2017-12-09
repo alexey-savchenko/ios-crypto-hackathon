@@ -11,8 +11,12 @@ import UIKit
 class MarketListCell: UITableViewCell {
   
   @IBOutlet weak var nameLabel: UILabel!
+  
   @IBOutlet weak var askLabel: UILabel!
   @IBOutlet weak var bidLabel: UILabel!
+  
+  @IBOutlet weak var bestAskLabel: UILabel!
+  @IBOutlet weak var bestBidLabel: UILabel!
   
   override func awakeFromNib() {
     super.awakeFromNib()

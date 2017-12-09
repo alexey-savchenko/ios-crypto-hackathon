@@ -16,11 +16,15 @@ class MarketListViewModel: MarketListViewModelType {
   
   private lazy var client: BUXCryptoClient = BUXCryptoClientBuilder(environment: .development).build(withAccessToken: self.accessToken)
   
-  private var cryptoMarkets = [CryptoMarket]()
-  
-  var cryptoMarketCount: Int {
-    return cryptoMarkets.count
+  private var cryptoMarkets = [CryptoMarket]() {
+    didSet {
+      cellViewModels = cryptoMarkets.map {MarketListCellViewModel(with: $0)}
+    }
   }
+  
+  private var cellViewModels = [MarketListCellViewModel]()
+  
+  var cryptoMarketCount: Int { return cryptoMarkets.count }
 
   weak var managedList: CryptomarketList?
   
@@ -52,11 +56,15 @@ class MarketListViewModel: MarketListViewModelType {
   
   func configureCell(_ cell: MarketListCell, indexPath: IndexPath) {
     
-    guard indexPath.row <= cryptoMarkets.count - 1 else { return }
+    guard indexPath.row <= cellViewModels.count - 1 else { return }
     
-    cell.nameLabel.text = cryptoMarkets[indexPath.row].name
-    cell.bidLabel.text = "Bid \(cryptoMarkets[indexPath.row].bestBid)"
-    cell.askLabel.text = "Bid \(cryptoMarkets[indexPath.row].bestAsk)"
+    cell.nameLabel.text = cellViewModels[indexPath.row].name
+    
+    cell.bidLabel.text = "Bid \(cellViewModels[indexPath.row].currentBid)"
+    cell.askLabel.text = "Bid \(cellViewModels[indexPath.row].currentAsk)"
+    
+    cell.bestBidLabel.text = "Best bid \(cellViewModels[indexPath.row].bestBid)"
+    cell.bestAskLabel.text = "Best ask \(cellViewModels[indexPath.row].bestAsk)"
     
   }
 
@@ -78,6 +86,13 @@ extension MarketListViewModel: CryptoMarketObserver {
     
     print(String(describing: cryptoMarket))
     
+    if let cellViewModelIndex = cellViewModels.index(where: { $0.name == cryptoMarket.marketName }) {
+      
+      cellViewModels[cellViewModelIndex].updateWith(update: cryptoMarket)
+
+      managedList?.commitUpdateAt(.init(row: cellViewModelIndex, section: 0))
+      
+    }
     
   }
   

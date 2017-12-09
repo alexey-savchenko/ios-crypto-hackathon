@@ -19,12 +19,24 @@ extension CryptoMarket: Equatable {
     }
 }
 
-struct CryptoMarketCreator: Creator {
+public struct CryptoMarketCreator: Creator {
     typealias RawType = [String: Any]
     typealias StrongType = CryptoMarket
     
     static func toRaw(from: CryptoMarket) -> [String: Any] {
-        fatalError()
+//        fatalError()
+      
+      
+      var dict = [String: Any]()
+      
+      dict["name"] = from.name
+      dict["baseCurrency"] = from.baseCurrency
+      dict["quoteCurrency"] = from.quoteCurrency
+      dict["bestBid"] = from.bestBid
+      dict["bestAsk"] = from.bestAsk
+      dict["lastUpdated"] = from.lastUpdated
+      
+      return dict
     }
     
     static func from(_ rawValue: [String: Any]) throws -> CryptoMarket {

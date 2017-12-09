@@ -13,4 +13,6 @@ protocol CryptomarketList: class {
   
   var marketListTableView: UITableView { get set }
   
+  func commitUpdateAt(_ indexPath: IndexPath)
+  
 }

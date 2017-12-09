@@ -12,7 +12,11 @@ import BUXCryptoClient
 
 class MarketListVC: UIViewController, CryptomarketList {
   
+  var marketListTableView = UITableView()
+  
   var viewModel: MarketListViewModelType!
+  
+  weak var delegate: CryptomarketListDelegate?
   
   init(viewModel: MarketListViewModelType) {
     self.viewModel = viewModel
@@ -23,22 +27,24 @@ class MarketListVC: UIViewController, CryptomarketList {
     super.init(coder: aDecoder)
   }
   
-  var marketListTableView = UITableView()
-  
-  
-  //  private let accessToken: String = "eyJhbGciOiJIUzI1NiJ9.eyJyZWZyZXNoYWJsZSI6ZmFsc2UsInN1YiI6ImQ4ZTg3NWNjLTI0OTctNDQ4Mi05MTkxLWM1OTk4ZWUwYTQxZCIsImF1ZCI6ImRldi5nZXRidXguY29tIiwic2NwIjpbImNyeXB0bzpsb2dpbiIsImNyeXB0bzphZG1pbiJdLCJleHAiOjE1NDQxOTU5ODksImlhdCI6MTUxMjYzOTA2MywianRpIjoiNWY1MGY2ODctM2RjMS00YTE5LWFhZmEtMjM5NzIwMjZlMTBjIiwiY2lkIjoiODQ3MzYyMzgwNCJ9.IWGfd7tH_zVjhdQ_loUP349lbtpP33FCBPK3NBVBCK8"
-  //
-  //  private lazy var client: BUXCryptoClient = BUXCryptoClientBuilder(environment: .development).build(withAccessToken: self.accessToken)
+  @objc func profileItemTap(_ sender: UIBarButtonItem){}
   
   override func viewDidLoad() {
     
     super.viewDidLoad()
+    
     view.backgroundColor = .white
-    setUp()
+    
+    listSetUp()
     
     viewModel.start()
     
+    let profileItem = UIBarButtonItem(title: "Portfolio",
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(profileItemTap(_:)))
     
+    navigationItem.rightBarButtonItems = [profileItem]
     
     
     
@@ -76,14 +82,14 @@ class MarketListVC: UIViewController, CryptomarketList {
     //      }
     //    }
     
-    //        self.client.cryptoMarketController.fetchUserAccount { [weak self] (result) in
-    //            switch result {
-    //            case .success(let account):
-    //                print(account)
-    //            case .failure(let error):
-    //                print(error.localizedDescription)
-    //            }
-    //        }
+//            self.client.cryptoMarketController.fetchUserAccount { [weak self] (result) in
+//                switch result {
+//                case .success(let account):
+//                    print(account)
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                }
+//            }
     
     //        let tradeSize = BigMoney(currency: "BTC", decimals: 8, amount: 0.0012)
     //        let tradeOrder = TradeOrder(tradeSize: tradeSize,
@@ -122,7 +128,7 @@ class MarketListVC: UIViewController, CryptomarketList {
     //        }
   }
   
-  private func setUp() {
+  private func listSetUp() {
     
     marketListTableView.delegate = self
     marketListTableView.dataSource = self
@@ -142,6 +148,16 @@ class MarketListVC: UIViewController, CryptomarketList {
     
   }
   
+  func commitUpdateAt(_ indexPath: IndexPath) {
+    
+    marketListTableView.beginUpdates()
+    
+    marketListTableView.reloadRows(at: [indexPath], with: .fade)
+    
+    marketListTableView.endUpdates()
+    
+  }
+  
   deinit {
     print("\(self) dealloc")
   }
@@ -151,10 +167,7 @@ class MarketListVC: UIViewController, CryptomarketList {
 extension MarketListVC: UITableViewDataSource, UITableViewDelegate {
   
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-//    return viewModel?.cryptoMarketCount ?? 0
-    return 10
-    
+    return viewModel.cryptoMarketCount
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -164,8 +177,16 @@ extension MarketListVC: UITableViewDataSource, UITableViewDelegate {
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "MarketListCell", for: indexPath) as! MarketListCell
+    
     viewModel.configureCell(cell, indexPath: indexPath)
+    
     return cell
+    
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    tableView.deselectRow(at: indexPath, animated: true)
     
   }
   
