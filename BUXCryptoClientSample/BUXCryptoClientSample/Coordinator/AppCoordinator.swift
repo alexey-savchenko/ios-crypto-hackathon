@@ -11,8 +11,10 @@ import UIKit
 import BUXCryptoClient
 
 class AppCoordinator: Coordinator {
-  
+
   // MARK: - Properties
+  
+  var childCoordinators = [Coordinator]()
   
   var rootViewController: UIViewController {
     return self.navigationController
@@ -54,22 +56,31 @@ extension AppCoordinator: CryptomarketListDelegate {
   
   func goToProfile() {
     
-    if let vc = UIStoryboard(name: "ProfileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC {
-      
-      let viewModel = ProfileViewModel()
-      viewModel.updateDelegate = vc
-      vc.viewModel = viewModel
-      
-      navigationController.pushViewController(vc, animated: true)
-      
-    }
+    let accountCoordinator = AccountCoordinator()
     
+    accountCoordinator.coordinatorDelegate = self
     
+    addChildCoordinator(accountCoordinator)
+    
+    accountCoordinator.start()
+    
+    rootViewController.present(accountCoordinator.rootViewController, animated: true, completion: nil)
     
   }
   
   func didSelectMarketInList(_ market: CryptoMarket) {
     print(market)
+  }
+  
+}
+
+extension AppCoordinator: AccountCoordinatorDelegate {
+  
+  func dissmisAccountFlow(_ coordinator: Coordinator) {
+    
+    coordinator.rootViewController.dismiss(animated: true, completion: nil)
+    removeChildCoordinator(coordinator)
+  
   }
   
 }

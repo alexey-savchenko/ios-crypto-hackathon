@@ -9,7 +9,7 @@
 import UIKit
 import BUXCryptoClient
 
-class ProfileVC: UIViewController {
+class AccountVC: UIViewController {
   
   private lazy var client: BUXCryptoClient = BUXCryptoClientBuilder(environment: .development).build(withAccessToken: Store.token)
   
@@ -21,15 +21,23 @@ class ProfileVC: UIViewController {
   
   var viewModel: ProfileViewModelType!
   
+  weak var flowDelegate: AccountFlowDelegate?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     view.backgroundColor = .white
     
-    navigationItem.title = "Profile"
+    navigationItem.title = "Account"
     
     viewModel.start()
     
+    let dissmisItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dissmissBittonTap))
+    navigationItem.leftBarButtonItems = [dissmisItem]
+  }
+  
+  @objc func dissmissBittonTap() {
+    flowDelegate?.dissmisAcountFlow()
   }
   
   @IBAction func pastTransactionsButtonTap(_ sender: UIButton) {
@@ -52,7 +60,7 @@ class ProfileVC: UIViewController {
   
 }
 
-extension ProfileVC: ProfileUpdateDelegate {
+extension AccountVC: ProfileUpdateDelegate {
   
   func didReceiveProfileData(_ data: Account) {
     
