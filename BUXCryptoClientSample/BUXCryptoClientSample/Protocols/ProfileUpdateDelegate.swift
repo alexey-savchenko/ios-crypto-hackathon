@@ -1,5 +1,5 @@
 //
-//  ProfileViewModelType.swift
+//  ProfileUpdateDelegate.swift
 //  BUXCryptoClientSample
 //
 //  Created by Alexey Savchenko on 09.12.2017.
@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import BUXCryptoClient
 
-protocol ProfileViewModelType: DataFetcher {
+protocol ProfileUpdateDelegate: class {
   
-  
+  func didReceiveProfileData(_ data: Account)
   
 }

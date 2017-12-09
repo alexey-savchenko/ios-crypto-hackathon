@@ -1,5 +1,5 @@
 //
-//  ProfileViewModelType.swift
+//  DataFetcher.swift
 //  BUXCryptoClientSample
 //
 //  Created by Alexey Savchenko on 09.12.2017.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-protocol ProfileViewModelType: DataFetcher {
-  
-  
-  
+protocol DataFetcher: class {
+  func start()
 }

@@ -11,15 +11,15 @@ import BUXCryptoClient
 
 class ProfileVC: UIViewController {
   
+  private lazy var client: BUXCryptoClient = BUXCryptoClientBuilder(environment: .development).build(withAccessToken: Store.token)
   
-  private let accessToken: String = "eyJhbGciOiJIUzI1NiJ9.eyJyZWZyZXNoYWJsZSI6ZmFsc2UsInN1YiI6ImQ4ZTg3NWNjLTI0OTctNDQ4Mi05MTkxLWM1OTk4ZWUwYTQxZCIsImF1ZCI6ImRldi5nZXRidXguY29tIiwic2NwIjpbImNyeXB0bzpsb2dpbiIsImNyeXB0bzphZG1pbiJdLCJleHAiOjE1NDQxOTU5ODksImlhdCI6MTUxMjYzOTA2MywianRpIjoiNWY1MGY2ODctM2RjMS00YTE5LWFhZmEtMjM5NzIwMjZlMTBjIiwiY2lkIjoiODQ3MzYyMzgwNCJ9.IWGfd7tH_zVjhdQ_loUP349lbtpP33FCBPK3NBVBCK8"
+  @IBOutlet weak var baseCurrencyValueLabel: UILabel!
+  @IBOutlet weak var baseCurrencyNameLabel: UILabel!
   
-  private lazy var client: BUXCryptoClient = BUXCryptoClientBuilder(environment: .development).build(withAccessToken: self.accessToken)
-  
+  @IBOutlet weak var quoteCurrencyValueLabel: UILabel!
+  @IBOutlet weak var quoteCurrencyNameLabel: UILabel!
   
   var viewModel: ProfileViewModelType!
-  
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,21 +27,43 @@ class ProfileVC: UIViewController {
     view.backgroundColor = .white
     
     navigationItem.title = "Profile"
-
     
+    viewModel.start()
     
-    
-//    self.client.cryptoMarketController.fetchUserAccount { [weak self] (result) in
-//      switch result {
-//      case .success(let account):
-//
-//        print(account)
-//
-//      case .failure(let error):
-//        print(error.localizedDescription)
-//      }
-//    }
   }
   
+  @IBAction func pastTransactionsButtonTap(_ sender: UIButton) {
+    
+    
+  }
+  
+  @IBAction func ordersButtonTap(_ sender: UIButton) {
+    
+    
+    
+  }
+  
+  
+  
+  
+  deinit {
+    print("\(self) dealloc")
+  }
+  
+}
+
+extension ProfileVC: ProfileUpdateDelegate {
+  
+  func didReceiveProfileData(_ data: Account) {
+    
+    print(data)
+    
+    baseCurrencyNameLabel.text = data.baseBalance.quantity.currency
+    baseCurrencyValueLabel.text = "\(data.baseBalance.quantity.amount)"
+    
+    quoteCurrencyNameLabel.text = data.baseBalance.currentValue.currency
+    quoteCurrencyValueLabel.text = "\(data.baseBalance.currentValue.amount)"
+    
+  }
   
 }

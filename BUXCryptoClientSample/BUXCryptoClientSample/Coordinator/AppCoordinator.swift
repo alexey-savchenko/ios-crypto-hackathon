@@ -47,7 +47,7 @@ class AppCoordinator: Coordinator {
     navigationController.viewControllers = [vc]
     
   }
-
+  
 }
 
 extension AppCoordinator: CryptomarketListDelegate {
@@ -55,7 +55,13 @@ extension AppCoordinator: CryptomarketListDelegate {
   func goToProfile() {
     
     if let vc = UIStoryboard(name: "ProfileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC {
-        navigationController.pushViewController(vc, animated: true)
+      
+      let viewModel = ProfileViewModel()
+      viewModel.updateDelegate = vc
+      vc.viewModel = viewModel
+      
+      navigationController.pushViewController(vc, animated: true)
+      
     }
     
     
@@ -63,7 +69,7 @@ extension AppCoordinator: CryptomarketListDelegate {
   }
   
   func didSelectMarketInList(_ market: CryptoMarket) {
-      print(market)
+    print(market)
   }
   
 }

@@ -25,6 +25,9 @@
 		80329EAF1FDC2DE9001B8BA8 /* ProfileViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EAE1FDC2DE9001B8BA8 /* ProfileViewModelType.swift */; };
 		80329EB11FDC2E21001B8BA8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EB01FDC2E21001B8BA8 /* ProfileViewModel.swift */; };
 		80329EB31FDC339F001B8BA8 /* ProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80329EB21FDC339F001B8BA8 /* ProfileStoryboard.storyboard */; };
+		80329EB51FDC3A5A001B8BA8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EB41FDC3A5A001B8BA8 /* Store.swift */; };
+		80329EB81FDC3BB9001B8BA8 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EB71FDC3BB9001B8BA8 /* DataFetcher.swift */; };
+		80329EBA1FDC3DA2001B8BA8 /* ProfileUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EB91FDC3DA2001B8BA8 /* ProfileUpdateDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		80329EAE1FDC2DE9001B8BA8 /* ProfileViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelType.swift; sourceTree = "<group>"; };
 		80329EB01FDC2E21001B8BA8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		80329EB21FDC339F001B8BA8 /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileStoryboard.storyboard; sourceTree = "<group>"; };
+		80329EB41FDC3A5A001B8BA8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		80329EB71FDC3BB9001B8BA8 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		80329EB91FDC3DA2001B8BA8 /* ProfileUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 				80329E981FDC092B001B8BA8 /* ViewModels */,
 				80329EAC1FDC2970001B8BA8 /* Views */,
 				80329EA51FDC212F001B8BA8 /* Protocols */,
+				80329EB61FDC3ADF001B8BA8 /* Helper */,
 			);
 			path = BUXCryptoClientSample;
 			sourceTree = "<group>";
@@ -164,6 +171,8 @@
 				80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */,
 				80329EA61FDC2169001B8BA8 /* CryptoMarketListDelegate.swift */,
 				80329EAE1FDC2DE9001B8BA8 /* ProfileViewModelType.swift */,
+				80329EB71FDC3BB9001B8BA8 /* DataFetcher.swift */,
+				80329EB91FDC3DA2001B8BA8 /* ProfileUpdateDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -184,6 +193,14 @@
 				80329EA01FDC0EC1001B8BA8 /* MarketListCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		80329EB61FDC3ADF001B8BA8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				80329EB41FDC3A5A001B8BA8 /* Store.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,13 +301,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80329EB81FDC3BB9001B8BA8 /* DataFetcher.swift in Sources */,
 				80329EAF1FDC2DE9001B8BA8 /* ProfileViewModelType.swift in Sources */,
 				80329E911FDC05DE001B8BA8 /* AppCoordinator.swift in Sources */,
 				3C13BB6E1FB5D10F0033E52F /* AppDelegate.swift in Sources */,
 				80329EA41FDC1283001B8BA8 /* CryptoMarketList.swift in Sources */,
+				80329EBA1FDC3DA2001B8BA8 /* ProfileUpdateDelegate.swift in Sources */,
 				80329EA11FDC0EC1001B8BA8 /* MarketListCell.swift in Sources */,
 				80329E9A1FDC0B1B001B8BA8 /* MarketListViewModel.swift in Sources */,
 				80329E961FDC0908001B8BA8 /* MarketListViewModelType.swift in Sources */,
+				80329EB51FDC3A5A001B8BA8 /* Store.swift in Sources */,
 				80329E941FDC072D001B8BA8 /* MarketListVC.swift in Sources */,
 				80329EA71FDC2169001B8BA8 /* CryptoMarketListDelegate.swift in Sources */,
 				80329EA91FDC2483001B8BA8 /* MarketListCellViewModel.swift in Sources */,

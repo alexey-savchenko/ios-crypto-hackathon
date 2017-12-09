@@ -10,7 +10,7 @@ import Foundation
 import BUXCryptoClient
 
 
-protocol MarketListViewModelType: class {
+protocol MarketListViewModelType: DataFetcher {
   
   var cryptoMarketCount: Int { get }
   
