@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BUXCryptoClient
 
 class TransactionsVC: UIViewController {
   
@@ -14,10 +15,16 @@ class TransactionsVC: UIViewController {
   
   weak var viewModel: TransactionsViewModelType?
   
+  var transactions = [Transaction]()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    view.backgroundColor = .white
     
+    listSetUp()
+    
+    transactionListTableView.reloadData()
     
   }
   
@@ -46,16 +53,21 @@ class TransactionsVC: UIViewController {
 
 extension TransactionsVC: UITableViewDelegate, UITableViewDataSource {
   
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 125
+  }
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    return viewModel?.transactionsCount ?? 0
+    return transactions.count
     
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionListCell", for: indexPath) as! TransactionListCell
-    viewModel?.configureCell(cell, indexPath: indexPath)
+//    viewModel?.configureCell(cell, indexPath: indexPath)
+    cell.configureCell(transactions[indexPath.row])
     return cell
     
   }

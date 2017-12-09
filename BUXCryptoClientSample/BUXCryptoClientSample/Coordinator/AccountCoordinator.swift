@@ -45,7 +45,13 @@ class AccountCoordinator: Coordinator, AccountFlowDelegate {
   }
   
   func showTransactions(_ transactions: [Transaction]) {
+    let viewModel = TransactionsViewModel(with: transactions)
+    let transactionsVC = TransactionsVC()
     
+    //HACK, sorry
+    transactionsVC.transactions = transactions
+    transactionsVC.viewModel = viewModel
+    navigationController.pushViewController(transactionsVC, animated: true)
   }
   
   func showOrders(_ orders: [Order]) {

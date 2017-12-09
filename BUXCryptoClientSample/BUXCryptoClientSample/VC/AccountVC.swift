@@ -42,6 +42,10 @@ class AccountVC: UIViewController {
   
   @IBAction func pastTransactionsButtonTap(_ sender: UIButton) {
     
+    guard viewModel.profileData != nil else { return }
+    
+    flowDelegate?.showTransactions(viewModel.profileData!.baseBalance.transactions)
+    
   }
   
   @IBAction func ordersButtonTap(_ sender: UIButton) {

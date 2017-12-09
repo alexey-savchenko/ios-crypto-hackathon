@@ -9,7 +9,7 @@
 import Foundation
 import BUXCryptoClient
 
-class TransactionsViewMode: TransactionsViewModelType {
+class TransactionsViewModel: TransactionsViewModelType {
   
   var transactionsCount: Int {
     return transactions.count

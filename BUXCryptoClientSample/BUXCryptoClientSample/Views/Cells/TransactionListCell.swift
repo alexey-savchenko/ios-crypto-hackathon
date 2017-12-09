@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import BUXCryptoClient
 class TransactionListCell: UITableViewCell {
   
   @IBOutlet weak var transactionTypeLabel: UILabel!
@@ -19,6 +19,14 @@ class TransactionListCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     
+  }
+  
+  func configureCell(_ transaction: Transaction) {
+    transactionTypeLabel.text = transaction.type.rawValue
+    transactionDescriptionLabel.text = transaction.description
+    transactionIDLabel.text = transaction.identifier
+    transactionAmountLabel.text = "\(transaction.amount.amount) \(transaction.amount.currency)"
+    transactionTimestamp.text = transaction.dateCreated.timeAgoSinceNow()
   }
   
 }
