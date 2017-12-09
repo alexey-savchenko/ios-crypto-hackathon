@@ -31,4 +31,8 @@ class TransactionsViewModel: TransactionsViewModelType {
     cell.transactionTimestamp.text = transactions[indexPath.row].dateCreated.timeAgoSinceNow()
   }
 
+  deinit {
+    print("\(self) dealloc")
+  }
+  
 }

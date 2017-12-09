@@ -48,6 +48,9 @@ class TransactionsVC: UIViewController {
     
   }
   
+  deinit {
+    print("\(self) dealloc")
+  }
   
 }
 
