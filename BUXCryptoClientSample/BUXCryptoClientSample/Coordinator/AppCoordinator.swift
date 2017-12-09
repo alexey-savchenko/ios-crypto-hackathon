@@ -54,6 +54,12 @@ extension AppCoordinator: CryptomarketListDelegate {
   
   func goToProfile() {
     
+    if let vc = UIStoryboard(name: "ProfileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC {
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    
+    
   }
   
   func didSelectMarketInList(_ market: CryptoMarket) {

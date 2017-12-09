@@ -21,6 +21,10 @@
 		80329EA41FDC1283001B8BA8 /* CryptoMarketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */; };
 		80329EA71FDC2169001B8BA8 /* CryptoMarketListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EA61FDC2169001B8BA8 /* CryptoMarketListDelegate.swift */; };
 		80329EA91FDC2483001B8BA8 /* MarketListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EA81FDC2483001B8BA8 /* MarketListCellViewModel.swift */; };
+		80329EAB1FDC2956001B8BA8 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EAA1FDC2956001B8BA8 /* ProfileVC.swift */; };
+		80329EAF1FDC2DE9001B8BA8 /* ProfileViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EAE1FDC2DE9001B8BA8 /* ProfileViewModelType.swift */; };
+		80329EB11FDC2E21001B8BA8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EB01FDC2E21001B8BA8 /* ProfileViewModel.swift */; };
+		80329EB31FDC339F001B8BA8 /* ProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80329EB21FDC339F001B8BA8 /* ProfileStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketList.swift; sourceTree = "<group>"; };
 		80329EA61FDC2169001B8BA8 /* CryptoMarketListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketListDelegate.swift; sourceTree = "<group>"; };
 		80329EA81FDC2483001B8BA8 /* MarketListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketListCellViewModel.swift; sourceTree = "<group>"; };
+		80329EAA1FDC2956001B8BA8 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		80329EAE1FDC2DE9001B8BA8 /* ProfileViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelType.swift; sourceTree = "<group>"; };
+		80329EB01FDC2E21001B8BA8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		80329EB21FDC339F001B8BA8 /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,15 +107,14 @@
 			isa = PBXGroup;
 			children = (
 				3C13BB6D1FB5D10F0033E52F /* AppDelegate.swift */,
-				3C13BB711FB5D10F0033E52F /* Main.storyboard */,
 				3C13BB741FB5D10F0033E52F /* Assets.xcassets */,
+				3C13BB711FB5D10F0033E52F /* Main.storyboard */,
 				3C13BB761FB5D10F0033E52F /* LaunchScreen.storyboard */,
 				3C13BB791FB5D10F0033E52F /* Info.plist */,
 				80329E921FDC068C001B8BA8 /* Coordinator */,
 				80329E971FDC0925001B8BA8 /* VC */,
 				80329E981FDC092B001B8BA8 /* ViewModels */,
-				80329E9F1FDC0EC1001B8BA8 /* MarketListCell.swift */,
-				80329EA01FDC0EC1001B8BA8 /* MarketListCell.xib */,
+				80329EAC1FDC2970001B8BA8 /* Views */,
 				80329EA51FDC212F001B8BA8 /* Protocols */,
 			);
 			path = BUXCryptoClientSample;
@@ -135,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				80329E931FDC072D001B8BA8 /* MarketListVC.swift */,
+				80329EAA1FDC2956001B8BA8 /* ProfileVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -142,9 +150,9 @@
 		80329E981FDC092B001B8BA8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				80329E951FDC0908001B8BA8 /* MarketListViewModelType.swift */,
 				80329E991FDC0B1B001B8BA8 /* MarketListViewModel.swift */,
 				80329EA81FDC2483001B8BA8 /* MarketListCellViewModel.swift */,
+				80329EB01FDC2E21001B8BA8 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -152,10 +160,30 @@
 		80329EA51FDC212F001B8BA8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				80329E951FDC0908001B8BA8 /* MarketListViewModelType.swift */,
 				80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */,
 				80329EA61FDC2169001B8BA8 /* CryptoMarketListDelegate.swift */,
+				80329EAE1FDC2DE9001B8BA8 /* ProfileViewModelType.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		80329EAC1FDC2970001B8BA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80329EB21FDC339F001B8BA8 /* ProfileStoryboard.storyboard */,
+				80329EAD1FDC297B001B8BA8 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		80329EAD1FDC297B001B8BA8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				80329E9F1FDC0EC1001B8BA8 /* MarketListCell.swift */,
+				80329EA01FDC0EC1001B8BA8 /* MarketListCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +273,7 @@
 				3C13BB751FB5D10F0033E52F /* Assets.xcassets in Resources */,
 				3C13BB731FB5D10F0033E52F /* Main.storyboard in Resources */,
 				80329EA21FDC0EC1001B8BA8 /* MarketListCell.xib in Resources */,
+				80329EB31FDC339F001B8BA8 /* ProfileStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80329EAF1FDC2DE9001B8BA8 /* ProfileViewModelType.swift in Sources */,
 				80329E911FDC05DE001B8BA8 /* AppCoordinator.swift in Sources */,
 				3C13BB6E1FB5D10F0033E52F /* AppDelegate.swift in Sources */,
 				80329EA41FDC1283001B8BA8 /* CryptoMarketList.swift in Sources */,
@@ -264,6 +294,8 @@
 				80329E941FDC072D001B8BA8 /* MarketListVC.swift in Sources */,
 				80329EA71FDC2169001B8BA8 /* CryptoMarketListDelegate.swift in Sources */,
 				80329EA91FDC2483001B8BA8 /* MarketListCellViewModel.swift in Sources */,
+				80329EB11FDC2E21001B8BA8 /* ProfileViewModel.swift in Sources */,
+				80329EAB1FDC2956001B8BA8 /* ProfileVC.swift in Sources */,
 				80329E8F1FDC058B001B8BA8 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

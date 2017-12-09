@@ -84,7 +84,7 @@ extension MarketListViewModel: CryptoMarketObserver {
   func cryptoMarketController(_ controller: CryptoMarketController,
                               didUpdatePriceOfCryptoMarket cryptoMarket: CryptoMarketQuoteUpdate) {
     
-    print(String(describing: cryptoMarket))
+//    print(String(describing: cryptoMarket))
     
     if let cellViewModelIndex = cellViewModels.index(where: { $0.name == cryptoMarket.marketName }) {
       
