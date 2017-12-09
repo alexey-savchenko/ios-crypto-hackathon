@@ -9,78 +9,92 @@
 import UIKit
 import BUXCryptoClient
 
-class ViewController: UIViewController {
-
-    private static let accessToken: String = // TODO: add token
+class MarketListVC: UIViewController {
+  
+  private static let accessToken: String = "eyJhbGciOiJIUzI1NiJ9.eyJyZWZyZXNoYWJsZSI6ZmFsc2UsInN1YiI6ImQ4ZTg3NWNjLTI0OTctNDQ4Mi05MTkxLWM1OTk4ZWUwYTQxZCIsImF1ZCI6ImRldi5nZXRidXguY29tIiwic2NwIjpbImNyeXB0bzpsb2dpbiIsImNyeXB0bzphZG1pbiJdLCJleHAiOjE1NDQxOTU5ODksImlhdCI6MTUxMjYzOTA2MywianRpIjoiNWY1MGY2ODctM2RjMS00YTE5LWFhZmEtMjM5NzIwMjZlMTBjIiwiY2lkIjoiODQ3MzYyMzgwNCJ9.IWGfd7tH_zVjhdQ_loUP349lbtpP33FCBPK3NBVBCK8"
+  
+  private let client: BUXCryptoClient = BUXCryptoClientBuilder(environment: .development)
+    .build(withAccessToken: MarketListVC.accessToken)
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    private let client: BUXCryptoClient = BUXCryptoClientBuilder(environment: .development).build(withAccessToken: ViewController.accessToken)
+    print("!")
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.client.connectToRealtimeFeed()
+    //    self.client.connectToRealtimeFeed()
+    
+    self.client.cryptoMarketController.fetchCryptoMarkets { [weak self] (result) in
+      guard let `self` = self else { return }
+      
+      switch result {
+      case let .success(list):
         
-//        self.client.cryptoMarketController.fetchCryptoMarkets { [weak self] (result) in
-//            guard let `self` = self else { return }
-//
-//            switch result {
-//            case .success(let list):
-//                print(String(describing: list))
-////                self.client.cryptoMarketController.setObserver(self, forCryptos: list)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
+        print("________________")
         
-//        self.client.cryptoMarketController.fetchUserAccount { [weak self] (result) in
-//            switch result {
-//            case .success(let account):
-//                print(account)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
+        for item in list {
+          print(item)
+        }
         
-//        let tradeSize = BigMoney(currency: "BTC", decimals: 8, amount: 0.0012)
-//        let tradeOrder = TradeOrder(tradeSize: tradeSize,
-//                                    limitPrice: 0.00238351)
-//
-//        self.client.cryptoMarketController.send(buyOrder: tradeOrder, forCrypto: "NEO") { (result) in
-//            switch result {
-//            case .success(let order):
-//                print(String(describing: order))
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
+        print("________________")
         
-        
-//        let tradeSize = BigMoney(currency: "NEO", decimals: 8, amount: 0.5)
-//        let tradeOrder = TradeOrder(tradeSize: tradeSize,
-//                                    limitPrice: 0.00233011)
-//
-//        self.client.cryptoMarketController.send(sellOrder: tradeOrder, forCrypto: "NEO") { (result) in
-//            switch result {
-//            case .success(let order):
-//                print(String(describing: order))
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-        
-//        self.client.cryptoMarketController.cancel(order: "----", forCrypto: "NEO") { (result) in
-//            switch result {
-//            case .success(let order):
-//                print(String(describing: order))
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
+        self.client.cryptoMarketController.setObserver(self, forCryptos: list)
+//        self.client.cryptoMarketController.removeObserver()
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
     }
+    
+    //            self.client.cryptoMarketController.fetchUserAccount { [weak self] (result) in
+    //                switch result {
+    //                case .success(let account):
+    //                    print(account)
+    //
+    //                  account.baseBalance.reservedAmount
+    //                case .failure(let error):
+    //                    print(error.localizedDescription)
+    //                }
+    //            }
+    
+    //        let tradeSize = BigMoney(currency: "BTC", decimals: 8, amount: 0.0012)
+    //        let tradeOrder = TradeOrder(tradeSize: tradeSize,
+    //                                    limitPrice: 0.00238351)
+    //
+    //        self.client.cryptoMarketController.send(buyOrder: tradeOrder, forCrypto: "NEO") { (result) in
+    //            switch result {
+    //            case .success(let order):
+    //                print(String(describing: order))
+    //            case .failure(let error):
+    //                print(error.localizedDescription)
+    //            }
+    //        }
+    
+    
+    //        let tradeSize = BigMoney(currency: "NEO", decimals: 8, amount: 0.5)
+    //        let tradeOrder = TradeOrder(tradeSize: tradeSize,
+    //                                    limitPrice: 0.00233011)
+    //
+    //        self.client.cryptoMarketController.send(sellOrder: tradeOrder, forCrypto: "NEO") { (result) in
+    //            switch result {
+    //            case .success(let order):
+    //                print(String(describing: order))
+    //            case .failure(let error):
+    //                print(error.localizedDescription)
+    //            }
+    //        }
+    
+    //        self.client.cryptoMarketController.cancel(order: "----", forCrypto: "NEO") { (result) in
+    //            switch result {
+    //            case .success(let order):
+    //                print(String(describing: order))
+    //            case .failure(let error):
+    //                print(error.localizedDescription)
+    //            }
+    //        }
+  }
 }
 
-extension ViewController: CryptoMarketObserver {
-    func cryptoMarketController(_ controller: CryptoMarketController, didUpdatePriceOfCryptoMarket cryptoMarket: CryptoMarketQuoteUpdate) {
-        print(String(describing: cryptoMarket))
-    }
+extension MarketListVC: CryptoMarketObserver {
+  func cryptoMarketController(_ controller: CryptoMarketController, didUpdatePriceOfCryptoMarket cryptoMarket: CryptoMarketQuoteUpdate) {
+    print(String(describing: cryptoMarket))
+  }
 }

@@ -1,4 +1,4 @@
-github "daltoniam/Starscream" "3.0.2"
+github "daltoniam/Starscream" "3.0.3"
 github "daltoniam/common-crypto-spm" "1.1.0"
 github "daltoniam/zlib-spm" "1.1.0"
 github "eshurakov/SwiftHTTPClient" "399985814f756235e96f7ed3cd65ac22a1545163"

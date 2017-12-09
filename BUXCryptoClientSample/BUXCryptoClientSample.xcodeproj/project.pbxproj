@@ -8,10 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3C13BB6E1FB5D10F0033E52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C13BB6D1FB5D10F0033E52F /* AppDelegate.swift */; };
-		3C13BB701FB5D10F0033E52F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C13BB6F1FB5D10F0033E52F /* ViewController.swift */; };
 		3C13BB731FB5D10F0033E52F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C13BB711FB5D10F0033E52F /* Main.storyboard */; };
 		3C13BB751FB5D10F0033E52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C13BB741FB5D10F0033E52F /* Assets.xcassets */; };
 		3C13BB781FB5D10F0033E52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C13BB761FB5D10F0033E52F /* LaunchScreen.storyboard */; };
+		80329E8F1FDC058B001B8BA8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329E8E1FDC058B001B8BA8 /* Coordinator.swift */; };
+		80329E911FDC05DE001B8BA8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329E901FDC05DE001B8BA8 /* AppCoordinator.swift */; };
+		80329E941FDC072D001B8BA8 /* MarketListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329E931FDC072D001B8BA8 /* MarketListVC.swift */; };
+		80329E961FDC0908001B8BA8 /* MarketListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329E951FDC0908001B8BA8 /* MarketListViewModelType.swift */; };
+		80329E9A1FDC0B1B001B8BA8 /* MarketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329E991FDC0B1B001B8BA8 /* MarketListViewModel.swift */; };
+		80329EA11FDC0EC1001B8BA8 /* MarketListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329E9F1FDC0EC1001B8BA8 /* MarketListCell.swift */; };
+		80329EA21FDC0EC1001B8BA8 /* MarketListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80329EA01FDC0EC1001B8BA8 /* MarketListCell.xib */; };
+		80329EA41FDC1283001B8BA8 /* CryptoMarketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,12 +48,19 @@
 /* Begin PBXFileReference section */
 		3C13BB6A1FB5D10F0033E52F /* BUXCryptoClientSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUXCryptoClientSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C13BB6D1FB5D10F0033E52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C13BB6F1FB5D10F0033E52F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3C13BB721FB5D10F0033E52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C13BB741FB5D10F0033E52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C13BB771FB5D10F0033E52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C13BB791FB5D10F0033E52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C13BB881FB5D15B0033E52F /* BUXCryptoClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BUXCryptoClient.xcodeproj; path = ../BUXCryptoClient.xcodeproj; sourceTree = "<group>"; };
+		80329E8E1FDC058B001B8BA8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		80329E901FDC05DE001B8BA8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		80329E931FDC072D001B8BA8 /* MarketListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketListVC.swift; sourceTree = "<group>"; };
+		80329E951FDC0908001B8BA8 /* MarketListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketListViewModelType.swift; sourceTree = "<group>"; };
+		80329E991FDC0B1B001B8BA8 /* MarketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketListViewModel.swift; sourceTree = "<group>"; };
+		80329E9F1FDC0EC1001B8BA8 /* MarketListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketListCell.swift; sourceTree = "<group>"; };
+		80329EA01FDC0EC1001B8BA8 /* MarketListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketListCell.xib; sourceTree = "<group>"; };
+		80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +95,16 @@
 			isa = PBXGroup;
 			children = (
 				3C13BB6D1FB5D10F0033E52F /* AppDelegate.swift */,
-				3C13BB6F1FB5D10F0033E52F /* ViewController.swift */,
 				3C13BB711FB5D10F0033E52F /* Main.storyboard */,
 				3C13BB741FB5D10F0033E52F /* Assets.xcassets */,
 				3C13BB761FB5D10F0033E52F /* LaunchScreen.storyboard */,
 				3C13BB791FB5D10F0033E52F /* Info.plist */,
+				80329E921FDC068C001B8BA8 /* Coordinator */,
+				80329E971FDC0925001B8BA8 /* VC */,
+				80329E981FDC092B001B8BA8 /* ViewModels */,
+				80329E9F1FDC0EC1001B8BA8 /* MarketListCell.swift */,
+				80329EA01FDC0EC1001B8BA8 /* MarketListCell.xib */,
+				80329EA31FDC1283001B8BA8 /* CryptoMarketList.swift */,
 			);
 			path = BUXCryptoClientSample;
 			sourceTree = "<group>";
@@ -97,6 +116,32 @@
 				3C13BB901FB5D15B0033E52F /* BUXCryptoClientTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		80329E921FDC068C001B8BA8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				80329E8E1FDC058B001B8BA8 /* Coordinator.swift */,
+				80329E901FDC05DE001B8BA8 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		80329E971FDC0925001B8BA8 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				80329E931FDC072D001B8BA8 /* MarketListVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		80329E981FDC092B001B8BA8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				80329E951FDC0908001B8BA8 /* MarketListViewModelType.swift */,
+				80329E991FDC0B1B001B8BA8 /* MarketListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +230,7 @@
 				3C13BB781FB5D10F0033E52F /* LaunchScreen.storyboard in Resources */,
 				3C13BB751FB5D10F0033E52F /* Assets.xcassets in Resources */,
 				3C13BB731FB5D10F0033E52F /* Main.storyboard in Resources */,
+				80329EA21FDC0EC1001B8BA8 /* MarketListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +241,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C13BB701FB5D10F0033E52F /* ViewController.swift in Sources */,
+				80329E911FDC05DE001B8BA8 /* AppCoordinator.swift in Sources */,
 				3C13BB6E1FB5D10F0033E52F /* AppDelegate.swift in Sources */,
+				80329EA41FDC1283001B8BA8 /* CryptoMarketList.swift in Sources */,
+				80329EA11FDC0EC1001B8BA8 /* MarketListCell.swift in Sources */,
+				80329E9A1FDC0B1B001B8BA8 /* MarketListViewModel.swift in Sources */,
+				80329E961FDC0908001B8BA8 /* MarketListViewModelType.swift in Sources */,
+				80329E941FDC072D001B8BA8 /* MarketListVC.swift in Sources */,
+				80329E8F1FDC058B001B8BA8 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N35W696BYS;
 				INFOPLIST_FILE = BUXCryptoClientSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getbux.BUXCryptoClientSample;
@@ -356,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N35W696BYS;
 				INFOPLIST_FILE = BUXCryptoClientSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getbux.BUXCryptoClientSample;
